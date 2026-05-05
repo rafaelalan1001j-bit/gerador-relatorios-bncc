@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Users, BookOpen, ClipboardList, FileText, TrendingUp, Award, Clock, Plus } from 'lucide-react';
+import { Users, BookOpen, ClipboardList, FileText, TrendingUp, Award, Clock, Plus, MessageSquare } from 'lucide-react';
 import { useApp } from '../contexts/AppContext';
 import Header from '../components/Header';
+import SugestaoForm from '../components/SugestaoForm';
 
 const colorVariants = [
   { bg: 'bg-primary-500', light: 'bg-primary-50', text: 'text-primary-700', icon: 'text-white' },
@@ -221,6 +222,20 @@ export default function DashboardPage() {
             </div>
           </div>
         )}
+
+        {/* Formulário de Sugestões */}
+        <div className="card">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center">
+              <MessageSquare size={20} className="text-primary-600" />
+            </div>
+            <div>
+              <h2 className="section-title mb-0">Envie uma Sugestão</h2>
+              <p className="text-sm text-slate-500 mt-0.5">Compartilhe ideias ou feedback sobre o sistema</p>
+            </div>
+          </div>
+          <SugestaoForm />
+        </div>
       </div>
     </div>
   );
